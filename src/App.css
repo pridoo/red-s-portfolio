@@ -1,0 +1,155 @@
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f6f3ef; 
+    overflow-x: hidden;
+}
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+main.content {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- HOME/HERO SECTION STYLES --- */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; 
+}
+
+.text-container {
+    padding: 20px;
+}
+
+.text-container h3 {
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    font-size: 32px; 
+    text-transform: uppercase;
+}
+
+.text-container h1 {
+    font-size: 50px; /* Base size */
+}
+
+.creative {
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px; 
+    display: block; 
+}
+
+.portfolio {
+    font-size: 130px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    line-height: 1;
+    display: block; 
+}
+
+.text-container p {
+    max-width: 600px;
+    margin: 30px auto 0;
+    font-size: 14px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+/* --- PAGE TRANSITION ANIMATION --- */
+.page-transition {
+    position: relative;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 50px 15px;
+        min-height: 70vh; 
+    }
+
+    .text-container h3 {
+        font-size: 16px; 
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+    
+    .text-container h1 {
+        font-size: 25px; 
+    }
+
+    .creative {
+        font-size: 55px; 
+        line-height: 1;
+    }
+
+    .portfolio {
+        font-size: 60px; 
+        font-weight: 400;
+        letter-spacing: 0px; 
+        line-height: 0.95; 
+    }
+
+    .text-container p {
+        max-width: 90%; 
+        font-size: 11px; 
+        margin: 20px auto 0;
+        line-height: 1.5;
+    }
+}
+
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+    
+    .text-container h3 {
+        font-size: 24px;
+    }
+
+    .creative {
+        font-size: 80px; 
+    }
+
+    .portfolio {
+        font-size: 100px;
+        letter-spacing: 2px;
+    }
+}

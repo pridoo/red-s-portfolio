@@ -1,0 +1,84 @@
+.floating-footer {
+    position: fixed;
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    border-radius: 40px;
+    padding: 12px 30px;
+    z-index: 10;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.floating-footer ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+}
+
+.floating-footer li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+    padding: 5px 10px; 
+    border-radius: 25px;
+}
+
+.floating-footer li:hover {
+    transform: translateY(-5px);
+    color: #94a25d;
+}
+
+/* Active state for navigation */
+.floating-footer li.active {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    transform: translateY(-5px); 
+}
+
+.floating-footer li.active span {
+    color: #000;
+}
+
+
+.floating-footer li span {
+    font-size: 10px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+/* --- MOBILE RESPONSIVENESS for Navbar --- */
+@media (max-width: 576px) {
+    .floating-footer {
+        bottom: 15px; 
+        padding: 8px 15px; 
+        max-width: 90%; 
+    }
+
+    .floating-footer ul {
+        gap: 25px; 
+    }
+
+    .floating-footer li {
+        font-size: 16px; 
+    }
+    
+    .floating-footer li span {
+        font-size: 9px; 
+        margin-top: 2px;
+    }
+    
+    .floating-footer li:hover {
+        transform: translateY(-3px); 
+    }
+    
+    .floating-footer li.active {
+        transform: translateY(-3px);
+    }
+}

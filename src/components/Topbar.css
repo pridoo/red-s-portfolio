@@ -1,0 +1,93 @@
+.topbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px; 
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    z-index: 5; 
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email {
+    color: #333;
+}
+
+.copy-btn,
+.cv-btn {
+    background: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.copy-btn:hover,
+.cv-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right a {
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.right a:hover {
+    color: #94a25d;
+}
+
+.right span {
+    color: #888;
+}
+
+/* --- MOBILE RESPONSIVENESS for Topbar --- */
+@media (max-width: 768px) {
+    .topbar {
+        padding: 15px 20px; 
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    .left {
+ 
+        flex-direction: row;
+        font-size: 12px;
+    }
+
+
+    .right {
+        display: none; 
+    }
+
+
+    .email {
+        font-size: 11px;
+    }
+    
+    .copy-btn,
+    .cv-btn {
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+}
