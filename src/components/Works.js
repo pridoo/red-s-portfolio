@@ -3,18 +3,29 @@ import './Works.css';
 import { FaEye, FaCode, FaImages, FaTimes, FaGithub } from 'react-icons/fa'; 
 
 const ProjectModal = ({ project, onClose }) => {
-    
+    // Default image array starts with the main project image
     let demoImages = [
         project.image, 
     ];
 
+    // Logic to add specific screenshots for each project
     if (project.id === 1) { 
         demoImages.push('/Municipal/ss1.jpg', '/Municipal/ss2.jpg'); 
     } else if (project.id === 2) { 
         demoImages.push('/Barangay/ss_dashboard.jpg', '/Barangay/ss_cert.jpg');
     } else if (project.id === 3) {
         demoImages.push('/Tekna/dashboard.jpg', '/Tekna/tasks_view.jpg');
-    } 
+    } else if (project.id === 7) { 
+        // SMART KIOSK SCREENSHOTS
+        demoImages = [
+            '/SmartKiosk/Login.png',
+            '/SmartKiosk/user_dashboard.png',
+            '/SmartKiosk/canteen_dashboard.png',
+            '/SmartKiosk/counter_dashboard.png',
+            '/SmartKiosk/admin_dashboard.png',
+            '/SmartKiosk/admin_system-logs.png'
+        ];
+    }
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -78,6 +89,16 @@ const Works = () => {
     };
 
     const projects = [
+        {
+            id: 7,
+            title: "SMART KIOSK: Campus Digital Wallet",
+            description: "A full-stack digital payment system for campus use. Developed a robust Laravel backend API tested via Postman, paired with a modern Vue.js frontend to manage real-time transactions for students, canteen staff, and administrators.",
+            image: "/SmartKiosk/Login.png", 
+            tech: ["Laravel", "Vue.js", "Postman", "Tailwind CSS"],
+            isLive: true,
+            liveUrl: "https://smart-kiosk-bay.vercel.app/",
+            codeUrl: "https://github.com/pridoo/Smart-Kiosk",
+        },
         {
             id: 1,
             title: "San Quintin Management System (SQMS)",
