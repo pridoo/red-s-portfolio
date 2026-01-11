@@ -3,10 +3,8 @@ import './Works.css';
 import { FaEye, FaCode, FaImages, FaTimes, FaGithub } from 'react-icons/fa'; 
 
 const ProjectModal = ({ project, onClose }) => {
-    // Default image array starts with the main project image
-    let demoImages = [
-        project.image, 
-    ];
+    // Default image array
+    let demoImages = [project.image];
 
     // Logic to add specific screenshots for each project
     if (project.id === 1) { 
@@ -16,7 +14,6 @@ const ProjectModal = ({ project, onClose }) => {
     } else if (project.id === 3) {
         demoImages.push('/Tekna/dashboard.jpg', '/Tekna/tasks_view.jpg');
     } else if (project.id === 7) { 
-        // SMART KIOSK SCREENSHOTS
         demoImages = [
             '/SmartKiosk/Login.png',
             '/SmartKiosk/user_dashboard.png',
@@ -24,6 +21,38 @@ const ProjectModal = ({ project, onClose }) => {
             '/SmartKiosk/counter_dashboard.png',
             '/SmartKiosk/admin_dashboard.png',
             '/SmartKiosk/admin_system-logs.png'
+        ];
+    } else if (project.id === 8) { 
+        // ESKWELASYS FULL FOLDER STRUCTURE [.png files]
+        demoImages = [
+            '/Eskwelasys/Login/Auth.png', // Main Entry Point
+            // Principal Folder
+            '/Eskwelasys/Principal/Activity_Log.png',
+            '/Eskwelasys/Principal/Ai_chatbot.png',
+            '/Eskwelasys/Principal/Dashboard.png',
+            '/Eskwelasys/Principal/Students.png',
+            '/Eskwelasys/Principal/Enrollment.png',
+            '/Eskwelasys/Principal/Grades_Concerns.png',
+            '/Eskwelasys/Principal/Notices.png',
+            '/Eskwelasys/Principal/Reports.png',
+            '/Eskwelasys/Principal/Settings.png',
+            // Teacher Folder
+            '/Eskwelasys/Teacher/Select_Class.png',
+            '/Eskwelasys/Teacher/Activity_Log.png',
+            '/Eskwelasys/Teacher/Approvals.png',
+            '/Eskwelasys/Teacher/Attendance.png',
+            '/Eskwelasys/Teacher/Dashboard.png',
+            '/Eskwelasys/Teacher/Enrollment.png',
+            '/Eskwelasys/Teacher/Grades.png',
+            '/Eskwelasys/Teacher/Subjects.png',
+            // Parent Folder
+            '/Eskwelasys/Parent/Dashboard.png',
+            '/Eskwelasys/Parent/Select_Children.png',
+            '/Eskwelasys/Parent/Attendance_Overview.png',
+            '/Eskwelasys/Parent/Grades_Report.png',
+            // Admin Folder
+            '/Eskwelasys/Admin/Dashboard.png',
+            '/Eskwelasys/Admin/User_Management.png'
         ];
     }
 
@@ -53,6 +82,7 @@ const ProjectModal = ({ project, onClose }) => {
                         src={demoImages[currentSlide]} 
                         alt={`Screenshot ${currentSlide + 1} of ${project.title}`} 
                         className="modal-image"
+                        onError={(e) => { e.target.src = 'https://via.placeholder.com/800x500?text=Image+Not+Found'; }}
                     />
                     
                     <button className="slider-btn next" onClick={nextSlide}>&#10095;</button>
@@ -77,7 +107,6 @@ const ProjectModal = ({ project, onClose }) => {
 
 
 const Works = () => {
-
     const [selectedProject, setSelectedProject] = useState(null);
 
     const openModal = (project) => {
@@ -89,6 +118,16 @@ const Works = () => {
     };
 
     const projects = [
+        {
+            id: 8, 
+            title: "ESKWELASYS: AI-Powered School Management System",
+            description: "A robust multi-role educational platform. It features an integrated AI assistant (DeepSeek-R1) to help administrators manage students, teachers, and parents efficiently. Includes real-time attendance, enrollment modules, and automated reporting.",
+            image: "/Eskwelasys/Login/Auth.png", 
+            tech: ["Laravel", "Inertia.js", "Vue.js", "DeepSeek AI", "Tailwind CSS"],
+            isLive: false,
+            liveUrl: "",
+            codeUrl: "https://github.com/pridoo/ESKWELASYS-Student-School-Management-System",
+        },
         {
             id: 7,
             title: "SMART KIOSK: Campus Digital Wallet",
